@@ -55,7 +55,7 @@ export const Home = () => {
 			<h1 className="container text-center bg-dark bg-gradient bg-opacity-75 rounded-5 my-4 py-3"> Personajes de Akatsukis</h1>
 			<div className="container">
 				<div className="row">
-					{store.akatsukis.slice(0, 8).map((akat) => (
+					{store.akatsukis.slice(0, 10).map((akat) => (
 						<CardAkatsuki key={akat.id} akat={akat} />
 					))}
 				</div>
@@ -65,7 +65,7 @@ export const Home = () => {
 			className="container text-center bg-secondary bg-gradient bg-opacity-50 rounded-5 my-4 py-3"> Organización Kara</h1>
 			<div className="container">
 				<div className="row">
-					{store.karas.slice(0, 8).map((kara) => (
+					{store.karas.slice(0, 10).map((kara) => (
 						<CardKara key={kara.id} kara={kara} />
 					))}
 				</div>

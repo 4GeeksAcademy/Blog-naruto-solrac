@@ -5,7 +5,9 @@ export const initialStore = () => {
     akatsukis: [],
     akatsukiDetail: null,
     karas: [],
-    karaDetail: null
+    karaDetail: null,
+    favorites:[],
+    logotipo: "https://static.wikia.nocookie.net/naruto/images/9/99/Naruto_ilustraci%C3%B3n.png/revision/latest?cb=20120328093346&path-prefix=es"
   }
 
 }
