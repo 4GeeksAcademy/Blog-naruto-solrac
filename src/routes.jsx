@@ -8,6 +8,7 @@ import {
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { SingleView } from "./pages/SingleView";
+import { Favorites } from "./pages/Favorites";
 
 
 export const router = createBrowserRouter(
@@ -24,6 +25,8 @@ export const router = createBrowserRouter(
       {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
       <Route path="/" element={<Home />} />
       <Route path="/details/:type/:id" element={<SingleView />} />
+      <Route path="/favorites" element={<Favorites />} />
+
 
     </Route>
   )

@@ -49,6 +49,17 @@ export default function storeReducer(store, action = {}) {
         karaDetail: action.payload
       }  
 
+    case 'set_favorites':
+      return{
+        ...store,
+        favorites: [...store.favorites,  action.payload] //validar para no repetir favorito(falta hacer)
+      }
+      
+    case 'remove_favorites':
+      return{
+        ...store,
+        favorites: store.favorites.filter(item => item.id !== action.payload.id)
+      }  
     default:
       throw Error('Unknown action.');
   }
