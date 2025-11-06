@@ -18,6 +18,7 @@ export const ItemFavorite = ({item}) => {
 
             <div className='col-md-6 text-center'>
                 <h1>{item.name}</h1>
+                <small>ID: {item.id}</small>
             </div>
 
             <div className='col-md-2 d-flex align-items-center'>
