@@ -7,14 +7,14 @@ export const ItemFavorite = ({item}) => {
 
     return (
     
-        <div className='row'>
-            {/* <div className='imagen col-md-4'>
+        <div className='row my-3 border'>
+            <div className='imagen col-md-4'>
                 <img
                     style={{ width: "100px", height: "100px" }}
                     src={item.images[0]}
                     alt={item.name}
                 />
-            </div> */}
+            </div>
 
             <div className='col-md-6 text-center'>
                 <h1>{item.name}</h1>

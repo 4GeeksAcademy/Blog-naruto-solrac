@@ -9,14 +9,9 @@ export const Card = ({ character }) => {
 
     if (!character || !character.images) return null;
 
-    const addFavorites = (name, id) => {
-        dispatch({
-            type: 'set_favorites',
-            payload: {
-                "name": name,
-                "id": id
-            }
-        })
+    const addFavorites = (name, id, imagen) => {
+        dispatch({ type: 'set_favorites', payload: { "name": name, "id": id, "images": imagen} })
+        navigate("/favorites")
     }
 
     return (
@@ -38,7 +33,9 @@ export const Card = ({ character }) => {
                     >
                         Ver mas detalles
                     </Link>
-                    <BottomAdd onClick={() => addFavorites(character.name, character.id)} />
+                    <button className="btn btn-danger" onClick={() => addFavorites(character.name, character.id, character.images)}>
+                        Add Fav <i className="fa-solid fa-heart"></i>
+                    </button>
                 </div>
             </div>
         </div >

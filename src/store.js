@@ -52,7 +52,7 @@ export default function storeReducer(store, action = {}) {
     case 'set_favorites':
       return{
         ...store,
-        favorites: [...store.favorites,  action.payload] //validar para no repetir favorito(falta hacer)
+        favorites: [...store.favorites,  action.payload]
       }
       
     case 'remove_favorites':
@@ -60,6 +60,7 @@ export default function storeReducer(store, action = {}) {
         ...store,
         favorites: store.favorites.filter(item => item.id !== action.payload.id)
       }  
+
     default:
       throw Error('Unknown action.');
   }
