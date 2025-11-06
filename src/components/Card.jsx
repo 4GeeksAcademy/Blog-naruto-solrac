@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
-import { BottomAdd } from "./BottomAdd";
 
 export const Card = ({ character }) => {
 

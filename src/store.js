@@ -6,7 +6,7 @@ export const initialStore = () => {
     akatsukiDetail: null,
     karas: [],
     karaDetail: null,
-    favorites:[],
+    favorites: [],
     logotipo: "https://static.wikia.nocookie.net/naruto/images/9/99/Naruto_ilustraci%C3%B3n.png/revision/latest?cb=20120328093346&path-prefix=es"
   }
 
@@ -26,16 +26,16 @@ export default function storeReducer(store, action = {}) {
       };
 
     case 'get_akatsukis':
-      return{
+      return {
         ...store,
         akatsukis: action.payload
       };
-      
+
     case 'get_akatsuki_id':
-      return{
+      return {
         ...store,
         akatsukiDetail: action.payload
-      }  
+      }
 
     case 'get_karas':
       return {
@@ -47,19 +47,24 @@ export default function storeReducer(store, action = {}) {
       return {
         ...store,
         karaDetail: action.payload
-      }  
+      }
 
     case 'set_favorites':
-      return{
-        ...store,
-        favorites: [...store.favorites,  action.payload]
+      // verificamos si ya existe el personaje en favoritos
+      const exists = store.favorites.some(item => item.id === action.payload.id);
+      if (exists) {
+        return store; // no cambia nada si ya está
       }
-      
-    case 'remove_favorites':
-      return{
+      return {
         ...store,
-        favorites: store.favorites.filter(item => item.id !== action.payload.id)
-      }  
+        favorites: [...store.favorites, action.payload]
+      }
+
+    case 'remove_favorites':
+      return {
+        ...store,
+        favorites: store.favorites.filter(item => item.id !== action.payload)
+      }
 
     default:
       throw Error('Unknown action.');
