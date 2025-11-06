@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { BottomAdd } from "./BottomAdd";
 
 export const Card = ({ character }) => {
 
     const { store, dispatch } = useGlobalReducer();
+    const navigate = useNavigate()
 
     if (!character || !character.images) return null;
 
@@ -20,8 +21,6 @@ export const Card = ({ character }) => {
 
     return (
         <div className="col-md-4">
-
-
             <div className="card my-3">
                 <img
                     src={character.images[0]}
@@ -39,7 +38,7 @@ export const Card = ({ character }) => {
                     >
                         Ver mas detalles
                     </Link>
-                    <BottomAdd onClick={() => addFavorites(character.name, character.id)}/>
+                    <BottomAdd onClick={() => addFavorites(character.name, character.id)} />
                 </div>
             </div>
         </div >

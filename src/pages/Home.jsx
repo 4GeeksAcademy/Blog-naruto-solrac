@@ -39,6 +39,8 @@ export const Home = () => {
 
 		getKaras(dispatch)
 
+		console.log(store.favorites);
+
 	}, []);
 
 	return (
